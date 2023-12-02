@@ -322,6 +322,11 @@ hr {
     .team-member h3 {
         font-size: 16px;
     }
+
+    .feature-section,
+    .about-section {
+        min-height: 100dvh;
+    }
 }
 
 /* for tablette */
@@ -366,5 +371,10 @@ hr {
 
     .team-member h3 {
         font-size: 17px;
+    }
+
+    .feature-section,
+    .about-section {
+        min-height: 100dvh;
     }
 }
