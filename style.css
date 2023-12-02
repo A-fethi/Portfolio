@@ -271,3 +271,100 @@ hr {
     background-color: #f1ac4c;
     border: none;
 }
+
+/* for phone */
+@media (max-width: 480px) {
+    .introduction .project-info h2 {
+        font-size: 45px;
+    }
+
+    .introduction .project-info p {
+        font-size: 17px;
+    }
+
+    .logo nav ul li a {
+        font-size: 11px;
+        padding: 7px;
+    }
+    
+    .logo a.blogify {
+        font-size: large;
+        margin-left: -20px;
+    }
+
+    .h2, .inspiration h2, .team-members h2, .github-link h2 {
+        font-size: 20px;
+    }
+
+    .feature div h3, .feature1 div h3 {
+        font-size: 27px;
+        margin-bottom: 12px;
+    }
+
+    .feature div p, .feature1 div p {
+        font-size: 12px;
+    }
+
+    .feature img {
+        max-width: 50%;
+        margin-right: 15px;
+    }
+
+    .feature1 img {
+        max-width: 40%;
+        margin-left: 15px;
+    }
+
+    .inspiration p, .github-link p {
+        font-size: 15px;
+    }
+
+    .team-member h3 {
+        font-size: 16px;
+    }
+}
+
+/* for tablette */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .introduction .project-info h2 {
+        font-size: 70px;
+    }
+
+    .introduction .project-info p {
+        font-size: 25px;
+    }
+
+    .logo a.blogify {
+        margin-left: -15px;
+    }
+
+    .h2, .inspiration h2, .team-members h2, .github-link h2 {
+        font-size: 30px;
+    }
+
+    .feature div h3, .feature1 div h3 {
+        font-size: 40px;
+    }
+
+    .feature div p, .feature1 div p {
+        font-size: 18px;
+    }
+
+    .feature img {
+        max-width: 50%;
+        margin-right: 15px;
+    }
+
+    .feature1 img {
+        max-width: 40%;
+        margin-left: 15px;
+    }
+
+    .inspiration p, .github-link p {
+        font-size: 22px;
+    }
+
+    .team-member h3 {
+        font-size: 17px;
+    }
+}
