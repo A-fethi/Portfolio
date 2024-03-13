@@ -1,0 +1,133 @@
+.navbar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    z-index: 2;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 10%;
+    color: var(--secondary);
+}
+
+.underline-text {
+    position: relative;
+    text-decoration: none;
+}
+
+.underline-text::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--line-hover-pcolor);
+    transition: 0.3s ease;
+}
+
+.container:hover .underline-text::before {
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+}
+
+.closeBtn,
+.menuBtn {
+    display: none;
+}
+
+.menuItems {
+    display: flex;
+    list-style: none;
+    gap: 41px;
+    margin-left: -20%;
+}
+
+.menuItems a {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+/* .title:hover,
+.container:hover {
+    color: var(--hover-secondary);
+    transition: .2s ease;
+    transform: translateY(-2px);
+} */
+
+/* .sun {
+    color: #fff;
+    width: 20px;
+    display: block;
+    cursor: pointer;
+}
+
+.sun:hover {
+    color: #f2e638;
+    width: 25px;
+} */
+
+@media screen and (max-width: 740px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 68px;
+    }
+
+    .menu {
+        position: absolute;
+        right: 0;
+        margin: 0 10%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 11px;
+        z-index: 3;
+    }
+
+    .menuBtn,
+    .closeBtn {
+        /* color: var(--color-primary); */
+        font-size: 30px;
+        display: block;
+        cursor: pointer;
+    }
+
+    .menuItems {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+        border-radius: 10px;
+        background-color: var(--primary-transparent);
+        padding: 24px 33px;
+        width: 55vw;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .menuItems.show {
+        display: flex;
+    }
+
+    .menuItems.hide {
+        display: none;
+    }
+
+    .container:hover .underline-text::before {
+        display: none;
+    }
+
+    .title:hover,
+    .container:hover {
+        color: var(--color-primary);
+    }
+}
