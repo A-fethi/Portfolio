@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import { useHover } from '@uidotdev/usehooks';
 import { FiMenu } from "react-icons/fi";
 import { FaWindowClose } from "react-icons/fa";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons';
 import './header.css';
 
 export default function Header() {
@@ -10,6 +12,18 @@ export default function Header() {
     const [lightMode, setLightMode] = useState(true);
     const [hoveredItem, setHoveredItem] = useState(null);
     const [ref, hovering] = useHover();
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
+    const toggleMode = () => {
+        setLightMode(!lightMode);
+    }
 
     const handleMouseEnter = (itemId) => {
         setHoveredItem(itemId);
@@ -23,27 +37,15 @@ export default function Header() {
         document.body.style.backgroundColor = lightMode ? 'var(--primary)' : 'var(--secondary)';
     }, [lightMode]);
 
-    const titleHover= document.getElementById('title');
-        if (titleHover) {
-            if (lightMode) {
-                titleHover.style.color = hovering ? 'var(--hover-secondary)' : 'var(--secondary)';
-            } else {
-                titleHover.style.color = hovering ? 'var(--hover-primary)' : 'var(--primary)';
-            }
-            titleHover.style.transition = hovering ? '.3s ease' : '';
-            titleHover.style.transform = hovering ? 'translateY(-2px)' : '';
+    const titleHover = document.getElementById('title');
+    if (titleHover) {
+        if (lightMode) {
+            titleHover.style.color = hovering ? 'var(--hover-secondary)' : 'var(--secondary)';
+        } else {
+            titleHover.style.color = hovering ? 'var(--hover-primary)' : 'var(--primary)';
         }
-
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    const closeMenu = () => {
-        setMenuOpen(false);
-    };
-
-    const toggleMode = () => {
-        setLightMode(!lightMode);
+        titleHover.style.transition = hovering ? '.3s ease' : '';
+        titleHover.style.transform = hovering ? 'translateY(-2px)' : '';
     }
 
     const menuItems = [
@@ -60,12 +62,12 @@ export default function Header() {
                     <span className='underline-text'>Portfo</span>lio
                 </div>
             </a>
-            <div className='menu'>
+            <div className={`menu ${lightMode ? 'light-mode' : 'dark-mode'}`}>
                 {menuOpen ?
                     <FaWindowClose className='closeBtn' onClick={toggleMenu} />
                     : <FiMenu className='menuBtn' onClick={toggleMenu} />
                 }
-                <ul className={`menuItems ${menuOpen ? 'show' : 'hide'}`} id='anchor'>
+                <ul className={`menuItems ${menuOpen ? 'show' : 'hide'} ${lightMode ? 'light-color' : 'dark-color'}`}>
                     {menuItems.map(item => (
                         <li key={item.id}>
                             <a
@@ -85,34 +87,13 @@ export default function Header() {
                             </a>
                         </li>
                     ))}
-                    {/* <li>
-                        <a href="#experience" onClick={closeMenu} id='experience'>
-                            <div className='container'>
-                                <span className='underline-text'>Experie</span>nce
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#projects" onClick={closeMenu} id='projects'>
-                            <div className='container'>
-                                <span className='underline-text'>Projec</span>ts
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contact" onClick={closeMenu} id='contact'>
-                            <div className='container'>
-                                <span className='underline-text'>Conta</span>ct
-                            </div>
-                        </a>
-                    </li> */}
                     <li>
                         {lightMode ?
-                            <button onClick={toggleMode}>Dark</button>
-                            : <button onClick={toggleMode}>Light</button>}
+                            <FontAwesomeIcon icon={faMoon} onClick={toggleMode} className='moon-icon' />
+                            : <FontAwesomeIcon icon={faSun} onClick={toggleMode} className='sun-icon' />}
                     </li>
                 </ul>
             </div>
-        </nav>
+        </nav >
     );
 };

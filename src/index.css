@@ -2,19 +2,28 @@
 
 html {
   font-family: "Roboto", sans-serif;
-  /* color-scheme: dark light; */
 }
 
 :root {
-  /* --primary: #070A13; */
+  /* ----------- Colors ----------- */
   --primary: #E5E1DA;
-  --primary-transparent: #ffffffbd;
   --secondary: #070A13;
   --hover-secondary: #070a138a;
   --hover-primary: #e5e1da8a;
   --line-hover-pcolor: #92C7CF;
-  --line-hover-scolor: #304583;
-
+  --sun-color: #f2e638;
+  --moon-color: #464541;
+  --menu-close-btn: #9290C3;
+  --menu-background: rgb(90, 90, 145);
+  /* ----------- Fonts sizes ----------- */
+  --XS-font: 12px;
+  --S-font: 20px;
+  --M-font: 25px;
+  --L-font: 30px;
+  --XL-font: 45px;
+  --XXL-font: 48px;
+  --XXXL-font: 70px;
+  --XXXXL-font: 116px;
 }
 
 body {
