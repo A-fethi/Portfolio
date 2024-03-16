@@ -7,6 +7,7 @@ html {
 :root {
   /* ----------- Colors ----------- */
   --primary: #E5E1DA;
+  --primary-dark: #d8d5d0;
   --secondary: #070A13;
   --hover-secondary: #070a138a;
   --hover-primary: #e5e1da8a;
@@ -23,10 +24,19 @@ html {
   --XL-font: 45px;
   --XXL-font: 48px;
   --XXXL-font: 70px;
-  --XXXXL-font: 116px;
+  --XXXXL-font: 180px;
 }
 
 body {
   margin: 0;
   background-color: var(--primary);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--line-hover-pcolor);
+  outline: 1px solid var(--line-hover-pcolor);
 }
