@@ -2,12 +2,12 @@
 
 html {
   font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1px;
 }
 
 :root {
   /* ----------- Colors ----------- */
   --primary: #E5E1DA;
-  --primary-dark: #d8d5d0;
   --secondary: #070A13;
   --hover-secondary: #070a138a;
   --hover-primary: #e5e1da8a;

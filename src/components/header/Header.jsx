@@ -33,8 +33,16 @@ export default function Header() {
         setHoveredItem(null);
     };
 
+    // useEffect(() => {
+    //     const data = window.localStorage.getItem('lightMode');
+    //     if (data) {
+    //         setLightMode(JSON.parse(data));
+    //     }
+    // }, []);
+
     useEffect(() => {
         document.body.style.backgroundColor = lightMode ? 'var(--primary)' : 'var(--secondary)';
+        // window.localStorage.setItem('lightMode', JSON.stringify(lightMode));
     }, [lightMode]);
 
     const titleHover = document.getElementById('title');

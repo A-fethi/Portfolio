@@ -1,0 +1,41 @@
+/* ====================
+-----About Section-----
+==================== */
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 10px;
+}
+
+.content-wrapper {
+    display: flex;
+    max-width: 120ch;
+    padding: 10px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 7px 0 rgb(70, 57, 57);
+}
+
+.paragraphs {
+    flex: 1;
+    padding: 50px 20px;
+    color: #7e6c6c;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.About {
+    font-size: var(--L-font);
+    color: #a86d6d;
+}
+
+.image {
+    max-width: 40%;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100px;
+    margin: 45px 0 0 20px;
+}

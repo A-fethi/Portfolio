@@ -7,13 +7,13 @@ import Footer from './components/footer/Footer'
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <Header />
       <Hero />
       <Main />
       {/* <Contact />
       <Footer /> */}
-    </>
+    </div>
   )
 }
 
