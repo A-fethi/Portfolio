@@ -6,13 +6,19 @@ import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
 
 function App() {
+  const [lightMode, setLightMode] = useState(true);
+
+  const toggleMode = () => {
+    setLightMode(!lightMode);
+  }
+
   return (
     <div className='App'>
-      <Header />
-      <Hero />
-      <Main />
-      {/* <Contact />
-      <Footer /> */}
+      <Header lightMode={lightMode} toggleMode={toggleMode} />
+      <Hero lightMode={lightMode} />
+      <Main lightMode={lightMode} />
+      <Contact lightMode={lightMode} />
+      <Footer lightMode={lightMode} />
     </div>
   )
 }
