@@ -9,7 +9,6 @@ import './header.css';
 
 export default function Header({ lightMode, toggleMode }) {
     const [menuOpen, setMenuOpen] = useState(false);
-    // const [lightMode, setLightMode] = useState(true);
     const [hoveredItem, setHoveredItem] = useState(null);
     const [ref, hovering] = useHover();
 
@@ -21,10 +20,6 @@ export default function Header({ lightMode, toggleMode }) {
         setMenuOpen(false);
     };
 
-    // const toggleMode = () => {
-    //     setLightMode(!lightMode);
-    // }
-
     const handleMouseEnter = (itemId) => {
         setHoveredItem(itemId);
     };
@@ -33,16 +28,8 @@ export default function Header({ lightMode, toggleMode }) {
         setHoveredItem(null);
     };
 
-    // useEffect(() => {
-    //     const data = window.localStorage.getItem('lightMode');
-    //     if (data) {
-    //         setLightMode(JSON.parse(data));
-    //     }
-    // }, []);
-
     useEffect(() => {
         document.body.style.backgroundColor = lightMode ? 'var(--primary)' : 'var(--secondary)';
-        // window.localStorage.setItem('lightMode', JSON.stringify(lightMode));
     }, [lightMode]);
 
     const titleHover = document.getElementById('title');
