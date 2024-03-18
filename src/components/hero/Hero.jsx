@@ -1,7 +1,7 @@
 import './hero.css';
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
-export default function Hero() {
+export default function Hero({ lightMode }) {
     return (
         <div>
             <section className='hero'>
@@ -9,10 +9,10 @@ export default function Hero() {
                 <h2 className='hero-subtitle'>Hi, I'm Abderrahmane 👋🏻</h2>
                 <h1 className='hero-title'>FRONT-END WEB DEVELOPER.</h1>
                 <div>
-                        <ul className='links'>
-                            <li><FaLinkedin /></li>
-                            <li><FaGithub /></li>
-                            <li><FaInstagram /></li>
+                        <ul className={`links ${lightMode ? 'light' : 'dark'}`}>
+                            <li className='linkedin'><FaLinkedin /></li>
+                            <li className='github'><FaGithub /></li>
+                            <li className='insta'><FaInstagram /></li>
                         </ul>
                 </div>
                 {/* <p className='hero-paragraph'>
