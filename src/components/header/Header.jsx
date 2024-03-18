@@ -7,9 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons';
 import './header.css';
 
-export default function Header() {
+export default function Header({ lightMode, toggleMode }) {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [lightMode, setLightMode] = useState(true);
+    // const [lightMode, setLightMode] = useState(true);
     const [hoveredItem, setHoveredItem] = useState(null);
     const [ref, hovering] = useHover();
 
@@ -21,9 +21,9 @@ export default function Header() {
         setMenuOpen(false);
     };
 
-    const toggleMode = () => {
-        setLightMode(!lightMode);
-    }
+    // const toggleMode = () => {
+    //     setLightMode(!lightMode);
+    // }
 
     const handleMouseEnter = (itemId) => {
         setHoveredItem(itemId);
