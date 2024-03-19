@@ -1,12 +1,33 @@
+import { useState } from 'react'
 import './main.css'
+import { FaGithub, FaLink } from "react-icons/fa"
+import { AnimatePresence, motion } from "framer-motion"
 
-export default function Main() {
+export default function Main({ lightMode }) {
+    const [currentActive, setCurrentActive] = useState('all');
+    const projects = [
+        { id: '1', title: 'Blogify', subtitle: 'Blogify is a simple and elegant blog website built with HTML, CSS, JavaScript, and Python Flask. This web application allows users to create, delete blog posts, as well as view and comment on posts.', imageUrl: '/Blogify.png', category: ['html-css', 'JS', 'Others'] },
+        { id: '2', title: 'Blogify Landing Page', subtitle: 'Landing Page for Blogify website built with HTML, CSS, JavaScript.', imageUrl: '/BlogifyLP.png', category: ['html-css', 'JS'] },
+        { id: '3', title: 'Personal Portfolio Website', subtitle: 'Crafted with attention to detail and a commitment to user experience, my personal portfolio website built with React, HTML, CSS is not just a showcase of my work but a reflection of my dedication to excellence in web development..', imageUrl: '/Portfolio.jpg', category: ['React'] },
+    ];
+    const [array, setArray] = useState(projects);
+    const handelSetActive = (category) => {
+        setCurrentActive(category);
+        if (category === 'all') {
+            setArray(projects);
+        } else {
+            const newArray = projects.filter(item => item.category.includes(category));
+            setArray(newArray);
+            console.log(newArray);
+        }
+    };
+
     return (
         <>
-            <section className='main-section'>
+            <section className={`main-section ${lightMode ? 'light-section' : 'dark-section'}`}>
                 <div className='content-wrapper'>
                     <div className='paragraphs'>
-                        <h2 className='About'>About Me</h2>
+                        <h2 id='about' className='About'>About Me</h2>
                         <div>
                             <p>
                                 Hello, I'm Abderrahmane Fethi, a 26-year-old from Morocco. While my educational background lies in business management, my passion for web development has been a driving force in my life.
@@ -33,6 +54,46 @@ export default function Main() {
                     </div>
                 </div>
             </section>
+            <main className='flex' id='projects'>
+                <section className={`left-section ${lightMode ? 'light-left' : 'dark-left'}`}>
+                    <button onClick={() => handelSetActive('all')} className={currentActive === 'all' ? 'active' : null}>All Projects</button>
+                    <button onClick={() => handelSetActive('html-css')} className={currentActive === 'html-css' ? 'active' : null}>HTML & CSS</button>
+                    <button onClick={() => handelSetActive('JS')} className={currentActive === 'JS' ? 'active' : null}>JavaScript</button>
+                    <button onClick={() => handelSetActive('React')} className={currentActive === 'React' ? 'active' : null}>React.js</button>
+                    <button onClick={() => handelSetActive('Others')} className={currentActive === 'Others' ? 'active' : null}>Others</button>
+                </section>
+                <section className='right-section'>
+                    <AnimatePresence>
+                        {array.map((item) => {
+                            return (
+                                <motion.article
+                                    layout
+                                    initial={{ transform: 'scale(0)'}}
+                                    animate={{ transform: 'scale(1)'}}
+                                    transition={{type: 'spring', damping: 8, stiffness: 50}}
+                                    key={item.id} className={`card ${lightMode ? 'light-bc' : 'dark-bc'}`}>
+                                    <img width={300} style={{ borderRadius: '30px' }} src={item.imageUrl} alt="project picture" />
+                                    <div style={{ width: '300px' }} className="box">
+                                        <h1 className={`title ${lightMode ? 'title-light' : 'title-dark'}`}>{item.title}</h1>
+                                        <p className={`subtitle ${lightMode ? 'subtitle-light' : 'subtitle-dark'}`}>{item.subtitle}</p>
+                                        <div className="icons">
+                                            <div className='icon-link'>
+                                                <FaLink />
+                                                <span className='link-text'>Link</span>
+                                            </div>
+                                            <div className={`github-link ${lightMode ? 'light-icon' : 'dark-icon'}`}>
+                                                <FaGithub />
+                                                <span className='github-text'>Github Repository</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.article>
+                            )
+                        })
+                        }
+                    </AnimatePresence>
+                </section>
+            </main>
         </>
     )
 }

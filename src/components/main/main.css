@@ -5,20 +5,33 @@
 .main-section {
     display: flex;
     justify-content: center;
-    margin: 20px 10px;
+    margin: 12px 10px;
+}
+
+.light-section {
+    background-color: #E2F0F9;
+}
+
+.dark-section {
+    background-color: #2d2e35;
+}
+
+.light-section,
+.dark-section {
+    border-radius: 45% 55% 73% 27% / 31% 19% 81% 69%;
 }
 
 .content-wrapper {
     display: flex;
-    max-width: 120ch;
-    padding: 10px 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 7px 0 rgb(70, 57, 57);
+    max-width: 105ch;
+    padding: 0 40px;
+    /* border-radius: 20px;
+    box-shadow: 0 0 7px 0 rgb(70, 57, 57); */
 }
 
 .paragraphs {
     flex: 1;
-    padding: 50px 20px;
+    padding: 0 20px;
     color: #7e6c6c;
     text-align: center;
     font-size: 1rem;
@@ -37,5 +50,199 @@
     max-width: 100%;
     height: auto;
     border-radius: 100px;
-    margin: 45px 0 0 20px;
+    margin: 66px 0 0 20px;
+}
+
+/* .technologies {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+} */
+/* ====================
+-----Main Section-----
+==================== */
+
+.flex {
+    display: flex;
+    align-items: start;
+    margin: 5rem 6.7%;
+    gap: 2.64rem;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.left-section button {
+    width: 11rem;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-size: 1.05rem;
+    text-transform: capitalize;
+    font-family: "Roboto", sans-serif;
+    opacity: 0.7;
+    border-radius: 5px;
+    border: none;
+}
+
+.light-left button {
+    background-color: #E0EAFC;
+}
+
+.dark-left button {
+    background-color: #14161F;
+    color: var(--primary);
+}
+
+.left-section button:hover {
+    opacity: 1;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.left-section button.active {
+    opacity: 1;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    padding: 0.8rem 0;
+    border: 1px solid rgb(132, 179, 241);
+}
+
+.right-section {
+    /* flex-grow: 1; */
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    justify-content: center;
+    row-gap: 2rem;
+}
+
+.card {
+    border-radius: 30px;
+}
+
+.card:hover {
+    transform: rotate(1deg);
+    transition: .3s;
+    scale: 1.01;
+}
+
+.light-bc {
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 1);
+    /* border: rgb(93, 188, 252) solid 1px; */
+    background: #E0EAFC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.dark-bc {
+    box-shadow: 0 0 7px 0 rgb(255, 255, 255, .5);
+    /* border: rgb(93, 188, 252) solid 1px; */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+}
+
+.box {
+    /* text-align: center; */
+    padding-top: 1rem;
+}
+
+.title {
+    font-size: var(--M-font);
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 5%;
+}
+
+.title-light {
+    color: var(--title-color);
+}
+
+.title-dark {
+    color: var(--primary);
+}
+
+.subtitle {
+    margin: 0 5%;
+    font-size: 0.8rem;
+    margin-top: 0.7rem;
+    margin-bottom: 1.1rem;
+}
+
+.subtitle-light {
+    color: var(--subtitle-color);
+}
+
+.subtitle-dark {
+    color: #807171;
+}
+
+.icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+
+.icon-link,
+.github-link {
+    font-size: var(--S-font);
+    color: var(--icons-color);
+}
+
+.icon-link:hover,
+.github-link:hover {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.link-text,
+.github-text {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: var(--XS-font);
+}
+
+.icon-link:hover {
+    color: rgb(90, 193, 224);
+}
+
+.light-icon:hover {
+    color: #161B22;
+}
+
+.dark-icon:hover {
+    color: #7e6c6c;
+}
+
+.icon-link:hover .link-text,
+.github-link:hover .github-text {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .left-section button {
+        width: 7rem;
+        padding: 0.8rem 0;
+        font-size: 0.9rem;
+    }
 }
