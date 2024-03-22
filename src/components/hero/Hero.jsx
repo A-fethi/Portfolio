@@ -1,6 +1,6 @@
 import './hero.css';
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
-
+import { motion } from 'framer-motion';
 export default function Hero({ lightMode }) {
     return (
         <div>
@@ -9,17 +9,24 @@ export default function Hero({ lightMode }) {
                 <h2 className='hero-subtitle'>Hi, I'm Abderrahmane 👋🏻</h2>
                 <h1 className='hero-title'>FRONT-END WEB DEVELOPER.</h1>
                 <div>
-                        <ul className={`links ${lightMode ? 'light' : 'dark'}`}>
-                            <li className='linkedin'><FaLinkedin /></li>
-                            <li className='github'><FaGithub /></li>
-                            <li className='insta'><FaInstagram /></li>
-                        </ul>
+                    <ul className={`links ${lightMode ? 'light' : 'dark'}`}>
+                        <li className='linkedin'>
+                            <a href="https://www.linkedin.com/in/abderrahmane-fethi" target="_blank" rel="noopener noreferrer">
+                                <FaLinkedin />
+                            </a>
+                        </li>
+                        <li className={`github ${lightMode ? 'light-git' : 'dark-git'}`}>
+                            <a href="https://github.com/A-fethi" target="_blank" rel="noopener noreferrer">
+                                <FaGithub />
+                            </a>
+                        </li>
+                        <li className='insta'>
+                            <a href="https://instagram.com/abderrahmane_fethi" target="_blank" rel="noopener noreferrer">
+                                <FaInstagram />
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                {/* <p className='hero-paragraph'>
-                    Enthusiastic junior <span className='p-span'>Frontend</span> web developer exploring the realms of <span className='p-span'>React.js</span>.
-                    Eager to learn and passionate about creating user-friendly interfaces.
-                    <br />Excited to embark on the journey of web development,<br /> and contribute to engaging projects.
-                </p> */}
             </section>
         </div>
     )

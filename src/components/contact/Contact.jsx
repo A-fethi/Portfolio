@@ -44,7 +44,7 @@ export default function Contact({ lightMode }) {
                         {state.submitting ? 'Submitting ...' : 'Submit'}
                     </button>
                     {state.succeeded && (
-                        <p className={`paragraph-animation ${lightMode ? 'primary' : 'secondary'}`} style={{ fontSize: '15px' }}>
+                        <p className={`paragraph-animation ${lightMode ? 'primary' : 'secondary'}`}>
                             <Lottie
                                 loop={false}
                                 style={{height: 25}}
@@ -52,7 +52,7 @@ export default function Contact({ lightMode }) {
                             />
                             Your message has been sent successfully 😀</p>)}
                     {state.errors && (
-                        <p className={`paragraph-animation ${lightMode ? 'primary' : 'secondary'}`} style={{ fontSize: '15px' }}>
+                        <p className={`paragraph-animation ${lightMode ? 'primary' : 'secondary'}`}>
                             <Lottie
                                 loop={false}
                                 style={{ height: 33}}

@@ -45,7 +45,6 @@ export default function Header({ lightMode, toggleMode }) {
 
     const menuItems = [
         { id: 'about', text: 'About' },
-        { id: 'experience', text: 'Experience' },
         { id: 'projects', text: 'Projects' },
         { id: 'contact', text: 'Contact' },
     ];

@@ -1,7 +1,7 @@
 .contact-container {
     display: flex;
     justify-content: space-between;
-    margin: 1rem 0;
+    margin: 1rem 0 4rem 0;
 }
 
 .animation {
@@ -114,4 +114,55 @@ label {
     align-items: center;
     gap: .3rem;
     margin-left: .5rem;
+    font-size: 15px;
+}
+
+
+@media screen and (max-width: 600px){
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .animation {
+        display: none;
+    }
+    
+    form {
+        font-size: 14px;
+        width: 90%;
+    }
+
+    .contact-me {
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .paragraph-animation {
+        gap: .3rem;
+        margin-left: .5rem;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 980px){
+    .animation {
+        width: 50%
+    }
+    
+    form {
+        font-size: 15px;
+        width: 80%;
+    }
+
+    .contact-me {
+        font-size: 36px;
+        font-weight: 900;
+    }
+
+    .paragraph-animation {
+        gap: .3rem;
+        margin-left: .5rem;
+        font-size: 14px;
+    }
 }

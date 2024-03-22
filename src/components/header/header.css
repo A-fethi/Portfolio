@@ -13,7 +13,7 @@
     font-size: var(--M-font);
     font-weight: 600;
     text-decoration: none;
-    margin: 0 10%;
+    margin: 0 5%;
     color: var(--secondary);
 }
 
@@ -56,17 +56,15 @@
 
 .menuItems {
     display: flex;
+    justify-content: center;
     list-style: none;
     gap: 41px;
     margin-left: -15%;
     font-size: 15px;
 }
 
-
-
 .menuItems a {
     text-decoration: none;
-    /* color: var(--secondary); */
 }
 
 .moon-icon {
@@ -89,15 +87,10 @@
     opacity: 1;
 }
 
-@media screen and (max-width: 576px) {
-    .title,
-    .menuBtn,
-    .closeBtn {
-        font-size: var(--S-font);
-    }
-
+@media screen and (max-width: 600px) {
     .menuItems {
         font-size: var(--XS-font);
+        gap: 30px;
     }
 
     .sun-icon,
@@ -106,7 +99,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -115,7 +108,7 @@
     .menu {
         position: absolute;
         right: 0;
-        margin: 0 10%;
+        margin: 0 5%;
         flex-direction: column;
         align-items: flex-end;
         gap: 11px;
@@ -124,7 +117,6 @@
 
     .menuBtn,
     .closeBtn {
-        /* color: var(--menu-close-btn); */
         font-size: var(--M-font);
         display: block;
         cursor: pointer;
@@ -134,11 +126,11 @@
         display: none;
         flex-direction: column;
         align-items: center;
-        gap: 13px;
+        gap: 35px;
         border-radius: 10px;
-        /* background-color: var(--menu-background); */
         padding: 10px 10px;
-        width: 75vw;
+        width: 80vw;
+        height: 77vh;
     }
 
     .menuItems.show {
@@ -164,7 +156,7 @@
     }
 
     .title {
-        font-size: var(--M-font);
+        font-size: 22px;
     }
 
     .title:hover,
@@ -172,21 +164,3 @@
         color: var(--color-primary);
     }
 }
-
-/* @media screen and (min-width: 992px) {
-    .title {
-        font-size: var(--XXL-font);
-    }
-    .menuItems {
-        font-size: var(--XL-font);
-    }
-
-    .sun-icon,
-    .moon-icon {
-        width: 45px;
-    }
-} */
-
-/* @media screen and (min-width: 1200px) {
-    
-} */

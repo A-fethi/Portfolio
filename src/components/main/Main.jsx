@@ -6,9 +6,9 @@ import { AnimatePresence, motion } from "framer-motion"
 export default function Main({ lightMode }) {
     const [currentActive, setCurrentActive] = useState('all');
     const projects = [
-        { id: '1', title: 'Blogify', subtitle: 'Blogify is a simple and elegant blog website built with HTML, CSS, JavaScript, and Python Flask. This web application allows users to create, delete blog posts, as well as view and comment on posts.', imageUrl: '/Blogify.png', category: ['html-css', 'JS', 'Others'] },
-        { id: '2', title: 'Blogify Landing Page', subtitle: 'Landing Page for Blogify website built with HTML, CSS, JavaScript.', imageUrl: '/BlogifyLP.png', category: ['html-css', 'JS'] },
-        { id: '3', title: 'Personal Portfolio Website', subtitle: 'Crafted with attention to detail and a commitment to user experience, my personal portfolio website built with React, HTML, CSS is not just a showcase of my work but a reflection of my dedication to excellence in web development..', imageUrl: '/Portfolio.jpg', category: ['React'] },
+        { id: '1', title: 'Blogify', subtitle: 'Blogify is a simple and elegant blog website built with HTML, CSS, JavaScript, and Python Flask. This web application allows users to create, delete blog posts, as well as view and comment on posts.', imageUrl: '/Blogify.png', category: ['html-css', 'JS', 'Others'], link: 'http://blog-ify.tech', repo: 'https://github.com/A-fethi/Blogify' },
+        { id: '2', title: 'Blogify Landing Page', subtitle: 'Landing Page for Blogify website built with HTML, CSS, JavaScript.', imageUrl: '/BlogifyLP.png', category: ['html-css', 'JS'], link: 'https://a-fethi.github.io/Blog-ify/', repo: 'https://github.com/A-fethi/Landing-Page' },
+        { id: '3', title: 'Personal Portfolio Website', subtitle: 'Crafted with attention to detail and a commitment to user experience, my personal portfolio website built with React, HTML, CSS is not just a showcase of my work but a reflection of my dedication to excellence in web development..', imageUrl: '/Portfolio.jpg', category: ['React'], link: 'https://google.com', repo: 'https://github.com/A-fethi/Portfolio' },
     ];
     const [array, setArray] = useState(projects);
     const handelSetActive = (category) => {
@@ -49,12 +49,22 @@ export default function Main({ lightMode }) {
                             </p>
                         </div>
                     </div>
-                    <div className='image'>
+                    <div
+                        className='image'>
                         <img src="/Me.jpg" alt="My Profile" />
                     </div>
                 </div>
             </section>
-            <main className='flex' id='projects'>
+            <section id='projects' className='skills-container'>
+                <div><p className='technologies'>Technologies</p></div>
+                <div className='icons-container'>
+                    <img className='left-right' src="/HTML.svg" alt="html-icon" />
+                    <img className='right-left' src="/CSS.svg" alt="css-icon" />
+                    <img className='left-right' src="/JS.svg" alt="javascript-icon" />
+                    <img className='right-left' src="/REACT.svg" alt="React-icon" />
+                </div>
+            </section>
+            <main className='flex'>
                 <section className={`left-section ${lightMode ? 'light-left' : 'dark-left'}`}>
                     <button onClick={() => handelSetActive('all')} className={currentActive === 'all' ? 'active' : null}>All Projects</button>
                     <button onClick={() => handelSetActive('html-css')} className={currentActive === 'html-css' ? 'active' : null}>HTML & CSS</button>
@@ -68,21 +78,21 @@ export default function Main({ lightMode }) {
                             return (
                                 <motion.article
                                     layout
-                                    initial={{ transform: 'scale(0)'}}
-                                    animate={{ transform: 'scale(1)'}}
-                                    transition={{type: 'spring', damping: 8, stiffness: 50}}
+                                    initial={{ transform: 'scale(0)' }}
+                                    animate={{ transform: 'scale(1)' }}
+                                    transition={{ type: 'spring', damping: 8, stiffness: 50 }}
                                     key={item.id} className={`card ${lightMode ? 'light-bc' : 'dark-bc'}`}>
-                                    <img width={300} style={{ borderRadius: '30px' }} src={item.imageUrl} alt="project picture" />
-                                    <div style={{ width: '300px' }} className="box">
-                                        <h1 className={`title ${lightMode ? 'title-light' : 'title-dark'}`}>{item.title}</h1>
+                                    <img className='box-img' src={item.imageUrl} alt="project picture" />
+                                    <div className="box">
+                                        <h1 className={`_title ${lightMode ? 'title-light' : 'title-dark'}`}>{item.title}</h1>
                                         <p className={`subtitle ${lightMode ? 'subtitle-light' : 'subtitle-dark'}`}>{item.subtitle}</p>
                                         <div className="icons">
                                             <div className='icon-link'>
-                                                <FaLink />
-                                                <span className='link-text'>Link</span>
+                                                <a href={item.link} target='_blank'><FaLink /></a>
+                                                <span className='link-text'>Website Link</span>
                                             </div>
                                             <div className={`github-link ${lightMode ? 'light-icon' : 'dark-icon'}`}>
-                                                <FaGithub />
+                                                <a href={item.repo} target='_blank' ><FaGithub /></a>
                                                 <span className='github-text'>Github Repository</span>
                                             </div>
                                         </div>
