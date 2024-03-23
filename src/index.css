@@ -3,19 +3,26 @@
 html {
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.1px;
+  scroll-behavior: smooth;
 }
 
 :root {
   /* ----------- Colors ----------- */
-  --primary: #E5E1DA;
+  /* --primary: #E5E1DA; */
+  /* --primary: #F1F5F9; */
+  --primary: #e8eaeb;
   --secondary: #070A13;
   --hover-secondary: #070a138a;
   --hover-primary: #e5e1da8a;
-  --line-hover-pcolor: #92C7CF;
+  --scroll-color: #92C7CF;
+  --line-hover-pcolor: #DF4C73;
   --sun-color: #f2e638;
   --moon-color: #464541;
-  --menu-close-btn: #9290C3;
-  --menu-background: rgb(90, 90, 145);
+  --title-color: #1E293B;
+  --subtitle-color: #333A46;
+  --btn-color: #dbe4e9;
+  --icons-color: #6A7587;
+  --icons-color-hover: #474e58;
   /* ----------- Fonts sizes ----------- */
   --XS-font: 12px;
   --S-font: 20px;
@@ -24,7 +31,7 @@ html {
   --XL-font: 45px;
   --XXL-font: 48px;
   --XXXL-font: 70px;
-  --XXXXL-font: 180px;
+  --XXXXL-font: 150px;
 }
 
 body {
@@ -37,6 +44,40 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--line-hover-pcolor);
-  outline: 1px solid var(--line-hover-pcolor);
+  background-color: var(--scroll-color);
+  outline: 1px solid var(--scroll-color);
+}
+
+.up-arrow {
+  width: 35px;
+  position: fixed;
+  bottom: 2rem;
+  right: 2%;
+  opacity: 0.8;
+}
+
+.up-arrow:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .up-arrow {
+    width: 25px;
+    opacity: 0.4;
+  }
+
+  .up-arrow:hover {
+    opacity: 0.6;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 980px) {
+  .up-arrow {
+    width: 30px;
+    opacity: 0.4;
+  }
+
+  .up-arrow:hover {
+    opacity: 0.6;
+  }
 }
