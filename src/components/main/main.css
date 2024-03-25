@@ -25,8 +25,6 @@
     display: flex;
     max-width: 105ch;
     padding: 0 40px;
-    /* border-radius: 20px;
-    box-shadow: 0 0 7px 0 rgb(70, 57, 57); */
 }
 
 .paragraphs {
@@ -183,23 +181,17 @@
 
 .light-bc {
     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 1);
-    /* border: rgb(93, 188, 252) solid 1px; */
     background: #E0EAFC;
-    /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #CFDEF3, #E0EAFC);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .dark-bc {
     box-shadow: 0 0 7px 0 rgb(255, 255, 255, .5);
-    /* border: rgb(93, 188, 252) solid 1px; */
     background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
 }
 
 .box {
-    /* text-align: center; */
     padding-top: 1rem;
     width: 300px;
 }

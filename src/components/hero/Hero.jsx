@@ -1,6 +1,5 @@
 import './hero.css';
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
-import { motion } from 'framer-motion';
 export default function Hero({ lightMode }) {
     return (
         <div>

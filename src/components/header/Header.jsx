@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import { useHover } from '@uidotdev/usehooks';
 import { FiMenu } from "react-icons/fi";

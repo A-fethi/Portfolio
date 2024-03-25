@@ -8,7 +8,7 @@ export default function Main({ lightMode }) {
     const projects = [
         { id: '1', title: 'Blogify', subtitle: 'Blogify is a simple and elegant blog website built with HTML, CSS, JavaScript, and Python Flask. This web application allows users to create, delete blog posts, as well as view and comment on posts.', imageUrl: '/Blogify.png', category: ['html-css', 'JS', 'Others'], link: 'http://blog-ify.tech', repo: 'https://github.com/A-fethi/Blogify' },
         { id: '2', title: 'Blogify Landing Page', subtitle: 'Landing Page for Blogify website built with HTML, CSS, JavaScript.', imageUrl: '/BlogifyLP.png', category: ['html-css', 'JS'], link: 'https://a-fethi.github.io/Blog-ify/', repo: 'https://github.com/A-fethi/Landing-Page' },
-        { id: '3', title: 'Personal Portfolio Website', subtitle: 'Crafted with attention to detail and a commitment to user experience, my personal portfolio website built with React, HTML, CSS is not just a showcase of my work but a reflection of my dedication to excellence in web development..', imageUrl: '/Portfolio.jpg', category: ['React'], link: 'https://google.com', repo: 'https://github.com/A-fethi/Portfolio' },
+        { id: '3', title: 'Personal Portfolio Website', subtitle: 'Crafted with attention to detail and a commitment to user experience, my personal portfolio website built with React, HTML, CSS is not just a showcase of my work but a reflection of my dedication to excellence in web development..', imageUrl: '/Portfolio.jpg', category: ['React'], link: '#', repo: 'https://github.com/A-fethi/Portfolio' },
     ];
     const [array, setArray] = useState(projects);
     const handelSetActive = (category) => {

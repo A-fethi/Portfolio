@@ -1,4 +1,3 @@
-import React, { useRef } from 'react'
 import './contact.css'
 import Lottie from 'lottie-react'
 import { useForm, ValidationError } from '@formspree/react';
