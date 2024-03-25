@@ -6,7 +6,7 @@ import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
 
 function App() {
-  const [lightMode, setLightMode] = useState(null);
+  const [lightMode, setLightMode] = useState(true);
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
