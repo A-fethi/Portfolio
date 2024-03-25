@@ -32,15 +32,11 @@ To run this project locally, follow these steps:
 2. Navigate to the project directory.
 3. Install dependencies using `npm install`.
 4. Run the development server with `npm run dev`.
-5. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+5. Open the link you got to view it in your browser.
 
 ## Deployment
 
 <!-- --------still in progress-------- -->
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
