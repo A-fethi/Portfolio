@@ -50,7 +50,7 @@ export default function Header({ lightMode, toggleMode }) {
 
     return (
         <nav className='navbar'>
-            <a href="/" className='title' id='title' ref={ref}>
+            <a href="/" className={`title ${lightMode ? 'light-mode' : 'dark-mode'}`} id='title' ref={ref}>
                 <div className='container'>
                     <span className='underline-text'>Portfo</span>lio
                 </div>
