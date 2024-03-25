@@ -36,7 +36,7 @@ To run this project locally, follow these steps:
 
 ## Deployment
 
-<!-- --------still in progress-------- -->
+You can find deployed version by following this link: [Abderrahmane Fethi](https://abderrahmane-fethi.vercel.app/)
 
 ## Acknowledgments
 
