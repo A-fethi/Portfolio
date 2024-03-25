@@ -51,7 +51,7 @@ export default function Main({ lightMode }) {
                     </div>
                     <div
                         className='image'>
-                        <img src="/Me.jpg" alt="My Profile" />
+                        <img loading='lazy' src="/Me.jpg" alt="My Profile" />
                     </div>
                 </div>
             </section>
@@ -82,7 +82,7 @@ export default function Main({ lightMode }) {
                                     animate={{ transform: 'scale(1)' }}
                                     transition={{ type: 'spring', damping: 8, stiffness: 50 }}
                                     key={item.id} className={`card ${lightMode ? 'light-bc' : 'dark-bc'}`}>
-                                    <img className='box-img' src={item.imageUrl} alt="project picture" />
+                                    <img loading='lazy' className='box-img' src={item.imageUrl} alt="project picture" />
                                     <div className="box">
                                         <h1 className={`_title ${lightMode ? 'title-light' : 'title-dark'}`}>{item.title}</h1>
                                         <p className={`subtitle ${lightMode ? 'subtitle-light' : 'subtitle-dark'}`}>{item.subtitle}</p>
